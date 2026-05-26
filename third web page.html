@@ -7,77 +7,6 @@
 <title>Third WebPage</title>
 
 <style>
-    @media (max-width:768px){
-
-body{
-padding:20px;
-}
-
-.container{
-width:100%;
-padding:25px;
-}
-
-.logo{
-width:220px;
-height:220px;
-}
-
-h1{
-font-size:40px;
-}
-
-.btn{
-font-size:24px;
-padding:18px 40px;
-}
-
-}
-
-    .buttons{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-top:80px;
-
-}
-
-.nav-btn{
-
-display:inline-block;
-
-padding:18px 40px;
-
-background:linear-gradient(
-90deg,
-orange,
-#ffb347
-);
-
-color:black;
-
-text-decoration:none;
-
-font-weight:bold;
-
-border-radius:60px;
-
-transition:.3s;
-
-box-shadow:
-0 0 25px rgba(255,165,0,.5);
-
-}
-
-.nav-btn:hover{
-
-transform:
-translateY(-5px)
-scale(1.05);
-
-}
 
 *{
 margin:0;
@@ -143,6 +72,7 @@ padding:40px;
 h1,h2,h3,h4,h5,h6{
 color:orange;
 margin-top:30px;
+line-height:1.5;
 }
 
 p{
@@ -157,6 +87,84 @@ border-color:#333;
 
 a{
 color:orange;
+}
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:80px;
+gap:20px;
+}
+
+.nav-btn{
+display:inline-block;
+padding:18px 40px;
+background:linear-gradient(90deg,orange,#ffb347);
+color:black;
+text-decoration:none;
+font-weight:bold;
+font-size:20px;
+border-radius:60px;
+transition:.3s;
+box-shadow:0 0 25px rgba(255,165,0,.5);
+}
+
+.nav-btn:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.header{
+padding:20px;
+text-align:center;
+}
+
+.logo{
+width:170px;
+height:170px;
+}
+
+.content{
+padding:25px;
+}
+
+h1{
+font-size:34px;
+}
+
+h2{
+font-size:28px;
+}
+
+h3{
+font-size:24px;
+}
+
+p{
+font-size:20px;
+line-height:2;
+}
+
+pre{
+font-size:18px;
+overflow-x:auto;
+}
+
+.buttons{
+flex-direction:column;
+margin-top:50px;
+}
+
+.nav-btn{
+width:100%;
+padding:20px;
+font-size:24px;
+text-align:center;
+}
+
 }
 
 </style>
