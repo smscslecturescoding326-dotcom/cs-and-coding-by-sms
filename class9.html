@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Computer Science - KP Board</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+:root{
+  --bg1:#050816;
+  --bg2:#0a1024;
+  --bg3:#101a38;
+  --card:rgba(16,22,42,.62);
+  --text:#f8fbff;
+  --muted:#d7e2f1;
+  --accent:#ff9a1f;
+  --accent2:#ff6a00;
+  --accent3:#ffd08a;
+}
+
+body{
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,154,31,.18), transparent 14%),
+    radial-gradient(circle at 82% 14%, rgba(255,106,0,.11), transparent 18%),
+    linear-gradient(180deg, var(--bg1), var(--bg2), var(--bg3));
+}
+
+/* NAV */
+header{
+  padding:24px 60px 0;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-radius:28px;
+  background:rgba(8,12,26,.68);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(16px);
+}
+
+.logo{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  object-fit:cover;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#fff;
+  margin-left:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.menu a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+}
+
+/* HEADER TEXT */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:40px 60px;
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.sub{
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+/* CHAPTER CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:24px;
+  border-radius:22px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,154,31,.35);
+}
+
+.card h3{
+  color:var(--accent3);
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  margin-bottom:15px;
+  line-height:1.6;
+}
+
+.card a{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  font-weight:700;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  header,.container{
+    padding:20px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <img src="logo.png" class="logo">
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="notes.html">Notes</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <h1>Computer Science Class 9th</h1>
+  <p class="sub">Khyber Pakhtunkhwa Board Computer Science Notes</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Chapter 1: Introduction to Computer</h3>
+      <p>Basic concepts of computers and their uses.</p>
+      <a href="chapter1.html">Open Chapter</a>
+    </div>
+
+    <div class="card">
+      <h3>Chapter 2: Hardware & Software</h3>
+      <p>Understanding computer parts and software types.</p>
+      <a href="file:///F:/Languages/HTML/Rough%20website/9chapter2.html">Open Chapter</a>
+    </div>
+
+    <div class="card">
+      <h3>Chapter 3: Operating System</h3>
+      <p>Learn about OS and its functions.</p>
+      <a href="file:///F:/Languages/HTML/Rough%20website/9chapter3.html">Open Chapter</a>
+    </div>
+
+    <div class="card">
+      <h3>Chapter 4: Networking Basics</h3>
+      <p>Introduction to computer networks and internet.</p>
+      <a href="file:///F:/Languages/HTML/Rough%20website/9chapter4.html">Open Chapter</a>
+    </div>
+
+     <div class="card">
+      <h3>Chapter 4: Networking Basics</h3>
+      <p>Introduction to computer networks and internet.</p>
+      <a href="chapter4.html">Open Chapter</a>
+    </div>
+
+     <div class="card">
+      <h3>Chapter 4: Networking Basics</h3>
+      <p>Introduction to computer networks and internet.</p>
+      <a href="chapter4.html">Open Chapter</a>
+    </div>
+
+     <div class="card">
+      <h3>Chapter 4: Networking Basics</h3>
+      <p>Introduction to computer networks and internet.</p>
+      <a href="chapter4.html">Open Chapter</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 CS & Coding by SMS
+</footer>
+
+</body>
+</html>

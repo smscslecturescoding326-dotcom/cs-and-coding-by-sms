@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS & Coding by SMS</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+:root{
+  --bg1:#050816;
+  --bg2:#0a1024;
+  --bg3:#101a38;
+  --card:rgba(16,22,42,.62);
+  --card2:rgba(255,153,0,.10);
+  --line:rgba(255,255,255,.10);
+  --text:#f8fbff;
+  --muted:#d7e2f1;
+  --accent:#ff9a1f;
+  --accent2:#ff6a00;
+  --accent3:#ffd08a;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,154,31,.18), transparent 14%),
+    radial-gradient(circle at 82% 14%, rgba(255,106,0,.11), transparent 18%),
+    radial-gradient(circle at 50% 0%, rgba(255,208,138,.08), transparent 20%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 44%, var(--bg3) 100%);
+  position:relative;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:52px 52px;
+  opacity:.16;
+  pointer-events:none;
+  z-index:0;
+}
+
+.glow-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(20px);
+  pointer-events:none;
+  z-index:0;
+  opacity:.55;
+}
+
+.glow-orb.one{
+  width:260px;
+  height:260px;
+  background:rgba(255,154,31,.18);
+  top:10%;
+  left:-70px;
+}
+
+.glow-orb.two{
+  width:220px;
+  height:220px;
+  background:rgba(255,106,0,.13);
+  right:-60px;
+  top:22%;
+}
+
+.glow-orb.three{
+  width:300px;
+  height:300px;
+  background:rgba(255,208,138,.08);
+  left:35%;
+  bottom:6%;
+}
+
+header{
+  position:relative;
+  z-index:1;
+  padding:24px 60px 0;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:18px 22px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  background:rgba(8,12,26,.68);
+  backdrop-filter:blur(16px);
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,154,31,.95);
+  box-shadow:0 0 22px rgba(255,154,31,.28);
+}
+
+.brand-text h1{
+  font-size:28px;
+  color:#fff3e0;
+  line-height:1.1;
+}
+
+.brand-text p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:4px;
+}
+
+.menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:flex-end;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#ffffff;
+  padding:11px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+  font-weight:700;
+  transition:.3s;
+}
+
+.menu a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(255,154,31,.24);
+}
+
+.hero{
+  position:relative;
+  z-index:1;
+  padding:42px 60px 24px;
+}
+
+.hero-box{
+  max-width:1200px;
+  margin:0 auto;
+  padding:40px;
+  border-radius:32px;
+  background:
+    linear-gradient(135deg, rgba(255,154,31,.12), transparent 35%),
+    linear-gradient(180deg, rgba(17,24,44,.80), rgba(11,16,31,.72));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 28px 70px rgba(0,0,0,.34);
+  backdrop-filter:blur(16px);
+  overflow:hidden;
+  position:relative;
+}
+
+.hero-box::after{
+  content:"";
+  position:absolute;
+  inset:auto -120px -120px auto;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,154,31,.22), transparent 65%);
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(255,154,31,.12);
+  border:1px solid rgba(255,154,31,.30);
+  color:#ffd8a6;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:28px;
+  align-items:center;
+  margin-top:22px;
+}
+
+.hero h2{
+  font-size:64px;
+  line-height:1.02;
+  color:#ffffff;
+  letter-spacing:.8px;
+}
+
+.hero h2 span{
+  color:var(--accent3);
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:20px;
+  line-height:1.9;
+  color:var(--muted);
+  max-width:760px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:999px;
+  font-weight:800;
+  transition:.3s;
+  border:1px solid transparent;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  box-shadow:0 14px 28px rgba(255,154,31,.20);
+}
+
+.btn.secondary{
+  color:#fff;
+  background:rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.12);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.hero-card{
+  padding:24px;
+  border-radius:26px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.hero-card h3{
+  color:#ffd9aa;
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.hero-card ul{
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+
+.hero-card li{
+  padding:12px 14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  color:#eef3ff;
+  line-height:1.5;
+}
+
+.sections{
+  position:relative;
+  z-index:1;
+  padding:12px 60px 26px;
+  max-width:1280px;
+  margin:0 auto;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.section-head h3{
+  font-size:28px;
+  color:#fff;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:15px;
+  max-width:650px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+}
+
+.card{
+  padding:24px;
+  border-radius:24px;
+  background:
+    linear-gradient(180deg, rgba(255,154,31,.10), transparent 28%),
+    var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 16px 42px rgba(0,0,0,.28);
+  backdrop-filter:blur(12px);
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,154,31,.35);
+  box-shadow:0 22px 54px rgba(0,0,0,.34);
+}
+.card{
+  text-decoration:none;
+  color:inherit;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:auto -60px -60px auto;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,154,31,.18), transparent 68%);
+}
+
+.card h4{
+  color:#ffd08a;
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.card .sub{
+  color:#fff;
+  font-size:14px;
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,154,31,.12);
+  border:1px solid rgba(255,154,31,.22);
+  margin-bottom:14px;
+}
+
+.card p{
+  color:#d8e2f2;
+  line-height:1.75;
+  font-size:15px;
+}
+
+.card-links{
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
+
+.card-links a{
+  text-decoration:none;
+  color:#fff;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.card-links a:hover{
+  background:rgba(255,154,31,.16);
+  border-color:rgba(255,154,31,.28);
+  color:#fff1dc;
+  transform:translateX(4px);
+}
+.main-btn{
+  display:inline-block;
+  margin-top:18px;
+  margin-bottom:10px;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  transition:.3s;
+}
+
+.main-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(255,154,31,.25);
+}
+
+footer{
+  position:relative;
+  z-index:1;
+  padding:32px 60px 42px;
+  margin-top:10px;
+  background:linear-gradient(to top, rgba(2,4,11,.98), transparent);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-wrap{
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:24px;
+}
+
+.footer-col h5{
+  color:#ffd08a;
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.footer-col p,
+.footer-col a{
+  color:#d7e2f1;
+  text-decoration:none;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.footer-col a:hover{
+  color:#ffcf86;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:24px;
+  color:#ffdbab;
+  font-size:14px;
+}
+
+@media(max-width:980px){
+  header,
+  .hero,
+  .sections,
+  footer{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .nav{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .brand{
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+  }
+
+  .menu{
+    justify-content:center;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h2{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-wrap{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+<div class="glow-orb one"></div>
+<div class="glow-orb two"></div>
+<div class="glow-orb three"></div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="logo.png" class="logo" alt="CS & Coding by SMS">
+      <div class="brand-text">
+        <h1>CS & Coding by SMS</h1>
+        <p>Where Curiosity Becomes Code.</p>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="file:///F:/Languages/HTML/Rough%20website/about.html">About</a>
+      <a href="file:///F:/Languages/HTML/Rough%20website/contact.html">Contact</a>
+      <a href="Courses.html">Courses</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+   <span class="pill">Computer Science • Technology • AI Learning</span>
+
+    <div class="hero-grid">
+      <div>
+        <h2>Learn With <span>Style</span><br>Build Your Future</h2>
+        <p>
+         Welcome to CS & Coding by SMS — your space for computer science, technology, and AI learning.
+        </p>
+
+        <div class="hero-actions">
+          <a href="Courses.html" class="btn primary">Begin Your Journey</a>
+          <a href="#featured" class="btn secondary">See Featured Topics</a>
+        </div>
+      </div>
+
+     <div class="hero-card">
+  <h3>What You'll Find</h3>
+  <ul>
+    <li>KP Board notes for Class 9, 10, 11, and 12.</li>
+    <li>Computer science basics, coding, and practical learning.</li>
+    <li>AI, technology, and future-focused topics.</li>
+    <li>YouTube videos and helpful learning resources.</li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sections" id="featured">
+  <div class="section-head">
+    <div>
+      <h3>Featured Sections</h3>
+      <p>Discover courses, notes, and learning paths built for curious minds.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <a href="Courses.html" class="card">
+      <span class="sub">Start here</span>
+      <h4>Courses and Lectures</h4>
+      <p>
+       A structured learning platform covering Computer Science from foundational to advanced levels, including Class 9 to 12 syllabus, programming languages such as C++, Java, and modern web development technologies. The platform is continuously expanding with emerging fields like Artificial Intelligence, 
+       software development concepts, and future-ready technology skills.
+      </p>
+    </a>
+
+    <a href="file:///F:/Languages/HTML/Rough%20website/notes.html" class="card">
+      <span class="sub">Study smart</span>
+      <h4>Notes</h4>
+      <p>
+        Comprehensive study material for Computer Science and related technology subjects, including Class 9 to 12 academic notes, programming concepts, exam-focused summaries, and simplified explanations. Additional advanced technology notes, practical concepts, and extended learning resources will continue to be 
+        added to support deeper understanding and skill development.
+      </p>
+    </a>
+
+    <a href="file:///F:/Languages/HTML/Rough%20website/Projects%20and%20resourses.html" class="card">
+      <span class="sub">Build more</span>
+      <h4>Projects & Resources</h4>
+      <p>
+       Explore beginner coding projects, practice exercises, and useful learning resources
+  to improve your programming skills step by step.
+      </p>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-wrap">
+
+    <div class="footer-col">
+      <h5>About</h5>
+      <p>
+       CS & Coding by SMS is a learning platform designed for students who want to understand Computer Science, programming, and modern technology 
+       in a simple and practical way. We focus on easy explanations, structured learning, and real skills for the future.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="index.html">Home</a><br>
+      <a href="Courses.html">Courses</a><br>
+      <a href="about.html">About</a><br>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>More</h5>
+      <a href="blog.html">Blog</a><br>
+      <a href="support.html">Support</a><br>
+      <a href="https://www.youtube.com/@CSCodingbySMS">YouTube</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 CS & Coding by SMS
+  </div>
+</footer>
+</body>
+</html>

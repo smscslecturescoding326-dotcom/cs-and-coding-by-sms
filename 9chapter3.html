@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1 - Computer Science</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+:root{
+  --bg1:#050816;
+  --bg2:#0a1024;
+  --bg3:#101a38;
+  --card:rgba(16,22,42,.62);
+  --text:#f8fbff;
+  --muted:#d7e2f1;
+  --accent:#ff9a1f;
+  --accent2:#ff6a00;
+  --accent3:#ffd08a;
+}
+
+body{
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,154,31,.18), transparent 14%),
+    radial-gradient(circle at 82% 14%, rgba(255,106,0,.11), transparent 18%),
+    linear-gradient(180deg, var(--bg1), var(--bg2), var(--bg3));
+}
+
+/* NAV (TOP MENU) */
+header{
+  padding:24px 60px 0;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-radius:28px;
+  background:rgba(8,12,26,.68);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(16px);
+}
+
+.logo{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  object-fit:cover;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#fff;
+  margin-left:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.menu a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+}
+
+/* MAIN */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:42px 60px;
+}
+
+h1{
+  font-size:52px;
+}
+
+.subtitle{
+  color:var(--muted);
+  margin-top:10px;
+  font-size:18px;
+}
+
+/* CHAPTER BOX */
+.chapter-box{
+  margin-top:30px;
+  padding:40px;
+  border-radius:32px;
+  background:
+    linear-gradient(135deg, rgba(255,154,31,.12), transparent 35%),
+    rgba(17,24,44,.80);
+  border:1px solid rgba(255,255,255,.10);
+}
+h4{
+  color: #fbff06;  /* or any color you like */
+}
+
+/* TOPICS */
+.topic{
+  margin-bottom:20px;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  opacity:0;
+  transform:translateY(15px);
+  animation:fadeUp 0.6s ease forwards;
+}
+
+.topic:nth-child(1){ animation-delay:0.1s; }
+.topic:nth-child(2){ animation-delay:0.2s; }
+.topic:nth-child(3){ animation-delay:0.3s; }
+.topic:nth-child(4){ animation-delay:0.4s; }
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.topic h3{
+  color:var(--accent3);
+  margin-bottom:8px;
+}
+h1{
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(255,154,31,.35);
+}
+
+.topic p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* BACK BUTTON (BOTTOM) */
+.bottom-btn{
+  text-align:center;
+  margin-top:30px;
+}
+
+.bottom-btn a{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  header,.container{
+    padding:20px;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .chapter-box{
+    padding:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<header>
+  <div class="nav">
+    <img src="logo.png" class="logo">
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h1>Chapter 3: Computer Hardware</h1>
+  <p class="subtitle">Computer Science Class 9th - Khyber Pakhtunkhwa Board</p>
+
+  <div class="chapter-box">
+
+    <div class="topic">
+      <h3>What is a Computer?</h3>
+      <h4>Definition</h4>
+      <p>A computer is an electronic device that accepts data as input, processes it according to a set of instructions, and produces meaningful information as output. It can also store data for 
+        future use and perform tasks automatically with high speed and accuracy.</p>
+        <h4>Explanation</h4>
+        <p>A computer is one of the most important inventions in modern technology. It is designed to make human work easier, faster, and more accurate. A computer cannot think on its own, but it follows instructions given by humans in the form of programs.
+
+When you use a computer, you usually give it some data. This data can be numbers, text, images, or even sound. The computer then processes this data using its internal system. After processing, it gives you useful results called output.
+
+For example, if you enter a simple calculation like 5 + 5, the computer processes it and gives the answer 10. This happens in a fraction of a second, which shows how fast computers are.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Characteristics</h3>
+      <p>Fast, accurate, reliable, and can store large amounts of data.</p>
+    </div>
+
+    <div class="topic">
+      <h3>Functions</h3>
+      <p>Input → Processing → Output → Storage</p>
+    </div>
+
+    <div class="topic">
+      <h3>Uses</h3>
+      <p>Used in education, hospitals, banking, and daily life.</p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BUTTON -->
+  <div class="bottom-btn">
+    <a href="class9.html">← Back to Class 9</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 CS & Coding by SMS
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - CS & Coding by SMS</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+:root{
+  --bg1:#050816;
+  --bg2:#0a1024;
+  --bg3:#101a38;
+  --card:rgba(16,22,42,.62);
+  --text:#f8fbff;
+  --muted:#d7e2f1;
+  --accent:#ff9a1f;
+  --accent2:#ff6a00;
+  --accent3:#ffd08a;
+}
+
+body{
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,154,31,.18), transparent 14%),
+    radial-gradient(circle at 82% 14%, rgba(255,106,0,.11), transparent 18%),
+    linear-gradient(180deg, var(--bg1), var(--bg2), var(--bg3));
+}
+
+/* NAV (same as home) */
+header{
+  padding:24px 60px 0;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-radius:28px;
+  background:rgba(8,12,26,.68);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(16px);
+}
+
+.logo{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  object-fit:cover;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#fff;
+  margin-left:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+  transition:0.3s;
+}
+
+.menu a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+}
+
+/* HERO */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:42px 60px;
+}
+
+h1{
+  font-size:52px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:18px;
+  margin-top:10px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:30px;
+}
+
+/* CARD */
+.card{
+  padding:24px;
+  border-radius:24px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,154,31,.35);
+}
+
+.card h3{
+  color:var(--accent3);
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:15px;
+  margin-bottom:15px;
+}
+
+.card a{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#111;
+  font-weight:700;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  header,.container{
+    padding:20px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="nav">
+    <img src="logo.png" class="logo">
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="courses.html">Courses</a>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h1>Notes</h1>
+  <p>
+  Well-organized Computer Science notes for easy understanding and exam preparation.  
+Use these notes for quick revision and concept building.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>📘 Class 9 Computer Science</h3>
+      <p>Khyber Pakhtunkhwa Board Class 9 Computer Science notes and concepts.  
+Includes complete syllabus coverage, important exam topics, and easy explanations for better understanding and preparation.</p>
+      <a href="file:///F:/Languages/HTML/Rough%20website/class9.html">Open Notes</a>
+    </div>
+
+    <div class="card">
+      <h3>📗 Class 10 Computer Science</h3>
+      <p>Khyber Pakhtunkhwa Board Class 10 Computer Science notes and concepts.  
+Complete syllabus coverage with important exam topics, past paper guidance, and easy explanations for strong board exam preparation.</p>
+      <a href="https://youtube.com" >Open Notes</a>
+    </div>
+
+    <div class="card">
+      <h3>📗 Class 11th</h3>
+      <p>Khyber Pakhtunkhwa Board Class 11 Computer Science notes and concepts.  
+Includes detailed theory, programming basics, and exam-focused material for strong understanding and preparation.</p>
+      <a href="https://youtube.com" target="_blank">Open Notes</a>
+    </div>
+
+    <div class="card">
+      <h3>📘 Class 12th</h3>
+      <p>Khyber Pakhtunkhwa Board Class 12 Computer Science notes and concepts.  
+Advanced concepts, complete syllabus coverage, and exam preparation material designed for board exams and future studies.</p>
+      <a href="https://youtube.com" target="_blank">Open Notes</a>
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 CS & Coding by SMS
+</footer>
+
+</body>
+</html>
